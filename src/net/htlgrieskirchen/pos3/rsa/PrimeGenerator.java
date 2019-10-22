@@ -5,9 +5,30 @@
  */
 package net.htlgrieskirchen.pos3.rsa;
 
+import java.util.stream.IntStream;
+
 public class PrimeGenerator {
+
     public int[] generatePrimeNumbers(int n) {
-        // insert your prime number generator
-        return null;
-    }    
+        IntStream numbers = IntStream.range(1, n);
+        return numbers.filter(nr -> isPrime(nr)).toArray();
+    }
+
+    public int[] generatePrimeNumbers(int s, int n) {
+        IntStream numbers = IntStream.range(s, n);
+        return numbers.filter(nr -> isPrime(nr)).toArray();
+    }
+
+    public static boolean isPrime(int value) {
+        if (value < 2) {
+            return false;
+        } else {
+            for (int i = 2; i < value; i++) {
+                if (value % i == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }

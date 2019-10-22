@@ -5,18 +5,21 @@
  */
 package net.htlgrieskirchen.pos3.rsa;
 
-public class Pair<T> {    
+public class Pair<T> {
+    
+    private T first;
+    private T second;
+    
     public Pair(T first, T second) {
-        // implement this
+        this.first = first;
+        this.second = second;
     }
 
     public T getFirst() {
-        // implement this
-        return null;
+        return first;
     }
 
     public T getSecond() {
-        // implement this
-        return null;
-    }
+        return second;
+    } 
 }
